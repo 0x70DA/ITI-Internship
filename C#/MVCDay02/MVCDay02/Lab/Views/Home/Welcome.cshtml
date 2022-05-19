@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Lab.Models.Employee E = ViewBag.e as Lab.Models.Employee;
+}
+
+<h2>Welcome</h2>
+
+<h2>@E.ID</h2>
+<h2>@E.Name</h2>
+<h2>@E.Age</h2>
+<h2>@E.Salary</h2>

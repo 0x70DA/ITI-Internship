@@ -1,0 +1,36 @@
+﻿@model List<Lab.Models.Employee>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<a href="/Employee/Create" class="btn btn-primary">Create New</a>
+
+<br />
+<br />
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Department</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Name</td>
+            <td>@item.Age</td>
+            <td>@item.DeptID</td>
+            <td>
+                <a href="/Employee/Edit/@item.ID" class="btn btn-success">Edit</a> |
+                <a href="/Employee/Details/@item.ID" class="btn btn-secondary">Details</a> |
+                <a href="/Employee/Delete/@item.ID" class="btn btn-danger" onclick="return confirm('Are You Sure You Want To Delete @item.Name?');">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

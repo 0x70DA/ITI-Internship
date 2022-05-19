@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Lab.Models.Student> students = ViewData["students"] as List<Lab.Models.Student>;
+}
+
+<h2>GetAll</h2>
+
+<table class="table table-bordered table-hover table-striped table-dark">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Age</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in students)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Name</td>
+                    <td>@item.Age</td>
+                </tr>
+            }
+    </tbody>
+</table>
